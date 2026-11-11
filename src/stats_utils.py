@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+
 sales=pd.read_csv("data/sales.csv")
 print(sales)
 # On crée un masque sur le DataFrame et on filtre les lignes
@@ -7,6 +8,7 @@ masque = sales["montant"] > 0
 sales_propre = sales[masque]
 print("\nDataFrame après filtrage :")
 print(sales_propre)
+
 def analyser_ventes(transactions) :
     # Le filtrage des montants invalides
     mask=transactions["montant"] > 0
@@ -36,5 +38,8 @@ def analyser_ventes(transactions) :
         "outliers": len(transactions_propre[outliers])
     }
     return(dict_result)
+
 resultat=analyser_ventes(sales)
 print(resultat)
+
+# Petit coucou que je te fas Tiba, je modifie cette code pour voir si on peut faire le merge de ton coté :)
